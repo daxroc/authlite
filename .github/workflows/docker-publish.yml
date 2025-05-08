@@ -55,7 +55,7 @@ jobs:
             echo "tags=${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest,${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${VERSION}" >> "$GITHUB_OUTPUT"
           else
             echo "tags=${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest" >> "$GITHUB_OUTPUT"
-
+          fi
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
